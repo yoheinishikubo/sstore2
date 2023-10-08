@@ -1,7 +1,7 @@
 # SLOAD2 & SLOAD2-Map
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-[![tests](https://github.com/0xsequence/sstore2/actions/workflows/tests.yml/badge.svg)](https://github.com/0xsequence/sstore2/actions/workflows/tests.yml)
+[![tests](https://github.com/yoheinishikubo/sstore2/actions/workflows/tests.yml/badge.svg)](https://github.com/yoheinishikubo/sstore2/actions/workflows/tests.yml)
 
 SLOAD2 is a set of Solidity libraries for writing and reading contract storage paying a fraction of the cost, it uses contract code as storage, writing data takes the form of contract creations and reading data uses `EXTCODECOPY`.
 
@@ -74,17 +74,17 @@ After writing 32 bytes `SSTORE2.write` becomes the cheaper option, and `SSTORE2M
 
 ## Installation
 
-`yarn add https://github.com/0xsequence/sstore2`
+`yarn add https://github.com/yoheinishikubo/sstore2`
 
 or
 
-`npm install --save https://github.com/0xsequence/sstore2`
+`npm install --save https://github.com/yoheinishikubo/sstore2`
 
 ## Usage
 
 SSTORE2 comes in two flavors, `SSTORE2` and `SSTORE2Map`. The main difference is that `SSTORE2` auto-generates a key or "pointer" for later data reads, and `SSTORE2Map` let's you use a custom pointer in the form of a `bytes32` key.
 
-`SSTORE2` is cheaper because it only needs to use `CREATE`. `SSTORE2Map` is a little more expensive (~ +50k gas) because it makes use of [CREATE3](https://github.com/0xsequence/create3), which requires using both CREATE2 + CREATE at the same time.
+`SSTORE2` is cheaper because it only needs to use `CREATE`. `SSTORE2Map` is a little more expensive (~ +50k gas) because it makes use of [CREATE3](https://github.com/yoheinishikubo/create3), which requires using both CREATE2 + CREATE at the same time.
 
 
 ## SSTORE2
@@ -96,7 +96,7 @@ Calling `SSTORE2.write` with some `data` returns an `address` pointer; this poin
 ```solidity
 pragma solidity ^0.8.0;
 
-import "@0xsequence/sstore2/contracts/SSTORE2.sol";
+import "@yoheinishikubo/sstore2/contracts/SSTORE2.sol";
 
 
 contract Demo {
@@ -119,7 +119,7 @@ Solidity 0.8.9 doesn't support variable size immutable variables; these can be e
 ```solidity
 pragma solidity ^0.8.0;
 
-import "@0xsequence/sstore2/contracts/SSTORE2.sol";
+import "@yoheinishikubo/sstore2/contracts/SSTORE2.sol";
 
 
 contract Demo {
@@ -158,7 +158,7 @@ The map store is also write-once, meaning that calling `SSTORE2Map.write` TWICE 
 ```solidity
 pragma solidity ^0.8.0;
 
-import "@0xsequence/sstore2/contracts/SSTORE2Map.sol";
+import "@yoheinishikubo/sstore2/contracts/SSTORE2Map.sol";
 
 
 contract Demo {
@@ -182,7 +182,7 @@ SSTORE2Map supports using multiple keys at the same time, but re-using a key wil
 ```solidity
 pragma solidity ^0.8.0;
 
-import "@0xsequence/sstore2/contracts/SSTORE2Map.sol";
+import "@yoheinishikubo/sstore2/contracts/SSTORE2Map.sol";
 
 
 contract Demo {
@@ -212,7 +212,7 @@ The functionality can be used for future-proofing a contract in the case that co
 ```solidity
 pragma solidity ^0.8.0;
 
-import "@0xsequence/sstore2/contracts/SSTORE2.sol";
+import "@yoheinishikubo/sstore2/contracts/SSTORE2.sol";
 
 
 contract Demo {
