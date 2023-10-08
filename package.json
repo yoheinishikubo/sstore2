@@ -1,5 +1,5 @@
 {
-  "name": "@0xsequence/sstore2",
+  "name": "@yoheinishikubo/sstore2",
   "version": "1.1.0",
   "files": [
     "/contracts/**/*.sol",
@@ -39,7 +39,7 @@
     "solidity-coverage": "^0.7.17"
   },
   "dependencies": {
-    "@0xsequence/create3": "https://github.com/0xsequence/create3.git",
+    "@yoheinishikubo/create3": "https://github.com/yoheinishikubo/create3.git",
     "csv-writer": "^1.6.0"
   }
 }
