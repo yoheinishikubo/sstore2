@@ -84,8 +84,7 @@ library SSTORE2 {
         address deployed = computeAddress(salt, keccak256(code), address(this));
 
         if (deployed.code.length > 0) {
-            pointer = deployed;
-            return;
+            return deployed;
         }
 
         // Deploy contract using create
