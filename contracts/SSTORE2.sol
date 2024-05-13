@@ -81,7 +81,7 @@ library SSTORE2 {
 
         bytes32 salt = keccak256(_data);
 
-        address deployed = computeAddress(salt, keccak256(code), address(this));
+        address deployed = computeAddress(salt, salt, address(this));
 
         if (deployed.code.length > 0) {
             return deployed;
