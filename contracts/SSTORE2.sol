@@ -42,7 +42,7 @@ library SSTORE2 {
         bytes32 salt,
         bytes32 bytecodeHash,
         address deployer
-    ) internal pure returns (address addr) {
+    ) public pure returns (address addr) {
         /// @solidity memory-safe-assembly
         assembly {
             let ptr := mload(0x40) // Get free memory pointer
