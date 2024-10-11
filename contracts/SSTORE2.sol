@@ -79,7 +79,7 @@ library SSTORE2 {
             abi.encodePacked(hex"00", _data)
         );
 
-        bytes32 salt = keccak256(_data);
+        bytes32 salt = keccak256(code);
 
         address deployed = computeAddress(salt, salt, address(this));
 
