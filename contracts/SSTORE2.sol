@@ -79,17 +79,17 @@ library SSTORE2 {
             abi.encodePacked(hex"00", _data)
         );
 
-        bytes32 salt = keccak256(_data);
+        bytes32 salt = keccak256(code);
 
         address deployed = computeAddress(salt, salt, address(this));
 
         if (deployed.code.length > 0) {
-            return deployed;
-        }
-
-        // Deploy contract using create
-        assembly {
-            pointer := create2(0, add(code, 32), mload(code), salt)
+            pointer = deployed;
+        } else {
+            // Deploy contract using create
+            assembly {
+                pointer := create2(0, add(code, 32), mload(code), salt)
+            }
         }
 
         // Address MUST be non-zero
